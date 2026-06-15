@@ -1,8 +1,35 @@
 import "./App.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+
+    const cursor = document.querySelector(".cursor");
+
+    document
+      .querySelectorAll("a, button, li")
+      .forEach(el => {
+
+        el.addEventListener("mouseenter", () => {
+
+          cursor.classList.add("active");
+
+        });
+
+        el.addEventListener("mouseleave", () => {
+
+          cursor.classList.remove("active");
+
+        });
+
+      });
+
+}, []);
   return (
     <div className="home">
+    <div className="cursor">
+      <div className="cursor-dot"></div>
+    </div>
       <nav className="navbar">
       <a href="/" className="logo">
         Chayma Gaabel<span>._</span>
@@ -55,7 +82,9 @@ function App() {
           FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER 
         </p>
 
-        <button>Let's Talk</button>
+        <div className="scroll-indicator">
+          <div className="scroll-arrow">↓</div>
+        </div>
       </section>
     </div>
   );

@@ -203,6 +203,59 @@
   color:#57d7ff;
 }
 
+.scroll-indicator{
+  width:40px;
+  height:70px;
+  border:2px solid rgba(255,255,255,.8);
+  border-radius:25px;
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.scroll-arrow{
+  color:#d66bff;
+  font-size:26px;
+  font-weight:bold;
+  text-align:center;
+  margin-top:10px;
+  animation:arrowMove 1.8s infinite;
+}
+
+@keyframes arrowMove{
+
+  0%{
+    opacity:0;
+    transform:translateY(0);
+  }
+
+  30%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(22px);
+  }
+}
+
+@keyframes scrollMove{
+  0%{
+    opacity:0;
+    transform:translateY(0);
+  }
+
+  30%{
+    opacity:1;
+  }
+
+  100%{
+    opacity:0;
+    transform:translateY(25px);
+  }
+}
+
 .hero{
   min-height:80vh;
   display:flex;
@@ -277,4 +330,95 @@
   100%{
     transform:translate(-50%,-50%) scale(1);
   }
+}
+
+.cursor{
+  position:fixed;
+  width:35px;
+  height:35px;
+
+  border:2px solid #d66bff;
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+  transform:translate(-50%,-50%);
+
+  z-index:99999;
+
+  transition:
+    width .25s ease,
+    height .25s ease,
+    background .25s ease;
+
+  box-shadow:
+    0 0 15px rgba(214,107,255,.8);
+}
+
+a:hover ~ .cursor,
+button:hover ~ .cursor{
+  width:60px;
+  height:60px;
+}
+
+.cursor.active{
+
+  width:65px;
+  height:65px;
+
+  background:
+    rgba(214,107,255,.15);
+
+  border-color:#d66bff;
+
+  box-shadow:
+    0 0 25px rgba(214,107,255,1);
+
+}
+
+body{
+  cursor:none;
+}
+
+a,
+button,
+li{
+  cursor:none;
+}
+
+.cursor{
+  position:fixed;
+  width:35px;
+  height:35px;
+
+  border:2px solid #d66bff;
+
+  border-radius:50%;
+
+  pointer-events:none;
+
+  transform:translate(-50%,-50%);
+
+  z-index:99999;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  box-shadow:
+    0 0 15px rgba(214,107,255,.8);
+}
+
+.cursor-dot{
+  width:8px;
+  height:8px;
+
+  background:#d66bff;
+
+  border-radius:50%;
+
+  box-shadow:
+    0 0 10px #d66bff,
+    0 0 20px #d66bff;
 }
