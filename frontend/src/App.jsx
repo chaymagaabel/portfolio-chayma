@@ -4,25 +4,34 @@ import { useEffect } from "react";
 function App() {
   useEffect(() => {
 
-    const cursor = document.querySelector(".cursor");
+  const cursor = document.querySelector(".cursor");
 
-    document
-      .querySelectorAll("a, button, li")
-      .forEach(el => {
+  const moveCursor = (e) => {
 
-        el.addEventListener("mouseenter", () => {
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
 
-          cursor.classList.add("active");
+  };
 
-        });
+  window.addEventListener("mousemove", moveCursor);
 
-        el.addEventListener("mouseleave", () => {
+  document
+    .querySelectorAll("a, button, li")
+    .forEach((el) => {
 
-          cursor.classList.remove("active");
-
-        });
-
+      el.addEventListener("mouseenter", () => {
+        cursor.classList.add("active");
       });
+
+      el.addEventListener("mouseleave", () => {
+        cursor.classList.remove("active");
+      });
+
+    });
+
+  return () => {
+    window.removeEventListener("mousemove", moveCursor);
+  };
 
 }, []);
   return (
