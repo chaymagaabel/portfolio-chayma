@@ -1,50 +1,43 @@
 import "./App.css";
 import { useEffect } from "react";
 
+import Home from "./sections/Home";
+import Expertise from "./sections/Expertise";
+import Work from "./sections/Work";
+import Experience from "./sections/Experience";
+import Contact from "./sections/Contact";
+
 function App() {
   useEffect(() => {
+    const cursor = document.querySelector(".cursor");
 
-  const cursor = document.querySelector(".cursor");
+    const moveCursor = (e) => {
+      if (!cursor) return;
 
-  const moveCursor = (e) => {
+      cursor.style.left = e.clientX + "px";
+      cursor.style.top = e.clientY + "px";
+    };
 
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
+    window.addEventListener("mousemove", moveCursor);
 
-  };
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+    };
+  }, []);
 
-  window.addEventListener("mousemove", moveCursor);
-
-  document
-    .querySelectorAll("a, button, li")
-    .forEach((el) => {
-
-      el.addEventListener("mouseenter", () => {
-        cursor.classList.add("active");
-      });
-
-      el.addEventListener("mouseleave", () => {
-        cursor.classList.remove("active");
-      });
-
-    });
-
-  return () => {
-    window.removeEventListener("mousemove", moveCursor);
-  };
-
-}, []);
   return (
     <div className="home">
-    <div className="cursor">
-      <div className="cursor-dot"></div>
-    </div>
+      <div className="cursor">
+        <div className="cursor-dot"></div>
+      </div>
+
       <nav className="navbar">
-      <a href="/" className="logo">
-        Chayma Gaabel<span>._</span>
-      </a>
+        <a href="/" className="logo">
+          Chayma Gaabel<span>._</span>
+        </a>
+
         <ul className="nav-links">
-          <li>
+          <li className="active">
             <span>01</span>
             <p>// home</p>
           </li>
@@ -71,30 +64,11 @@ function App() {
         </ul>
       </nav>
 
-      <section className="hero">
-        <div className="particles">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <div className="floating-icon code">&lt;/&gt;</div>
-        <div className="floating-icon ai">AI</div>
-        <div className="floating-icon db">DATABASE</div>
-        <div className="glow"></div>
-
-        <h1>CHAYMA GAABEL</h1>
-
-        <p>
-          FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER 
-        </p>
-
-        <div className="scroll-indicator">
-          <div className="scroll-arrow">↓</div>
-        </div>
-      </section>
+      <Home />
+      <Expertise />
+      <Work />
+      <Experience />
+      <Contact />
     </div>
   );
 }

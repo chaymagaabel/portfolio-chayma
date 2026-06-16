@@ -399,3 +399,27 @@ li{
     0 0 10px #d66bff,
     0 0 20px #d66bff;
 }
+
+.nav-links li.active{
+  opacity:1;
+}
+
+.nav-links li.active p,
+.nav-links li.active span{
+  color:white;
+}
+
+.nav-links li.active p{
+  text-shadow:
+    0 0 10px rgba(255,255,255,.8),
+    0 0 20px rgba(255,255,255,.6);
+}
+
+.section{
+  min-height:100vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
