@@ -1,3 +1,5 @@
+import profileImg from "../assets/chayma.png";
+
 function Home() {
   return (
     <section id="home" className="hero">
@@ -16,11 +18,24 @@ function Home() {
 
       <div className="glow"></div>
 
-      <h1>CHAYMA GAABEL</h1>
+      <div className="hero-content">
 
-      <p>
-        FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER
-      </p>
+        <div className="hero-text">
+          <h1>
+            CHAYMA <br />
+            GAABEL
+          </h1>
+
+          <p>
+            FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER
+          </p>
+        </div>
+
+        <div className="hero-image">
+          <img src={profileImg} alt="Chayma" />
+        </div>
+
+      </div>
 
       <div className="scroll-indicator">
         <div className="scroll-arrow">↓</div>
