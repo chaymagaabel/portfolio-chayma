@@ -20,15 +20,13 @@ function Home() {
 
       <div className="hero-content">
 
-        <div className="hero-text">
-          <h1>
-            CHAYMA <br />
-            GAABEL
-          </h1>
+      <div className="hero-top">
 
-          <p>
-            FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER
-          </p>
+        <div className="hero-text">
+          <h1 className="signature-name">
+            <span className="first-name">Chayma</span>
+            <span className="last-name">Gaabel</span>
+          </h1>
         </div>
 
         <div className="hero-image">
@@ -36,6 +34,12 @@ function Home() {
         </div>
 
       </div>
+
+      <p className="hero-subtitle">
+        FULL STACK DEVELOPER • AI ENGINEER • MACHINE LEARNING ENGINEER • SOFTWARE ENGINEER
+      </p>
+
+    </div>
 
       <div className="scroll-indicator">
         <div className="scroll-arrow">↓</div>
