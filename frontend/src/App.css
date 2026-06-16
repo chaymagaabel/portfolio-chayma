@@ -128,11 +128,21 @@
 }
 
 .navbar{
+  position:fixed;
+  top:0;
+  left:0;
+
   width:100%;
+
   display:flex;
   justify-content:space-between;
   align-items:flex-start;
-  padding:40px 80px;
+
+  padding:25px 80px;
+
+  z-index:999;
+
+  background:transparent;
 }
 
 .logo{
@@ -257,7 +267,9 @@
 }
 
 .hero{
-  min-height:80vh;
+  min-height:100vh;
+  padding-top:120px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -418,8 +430,153 @@ li{
 .section{
   min-height:100vh;
 
+  padding-top:120px;
+
   display:flex;
   flex-direction:column;
   justify-content:center;
   align-items:center;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px){
+
+  .navbar{
+    padding:30px 40px;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+  }
+
+  .nav-links{
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero h1{
+    font-size:5rem;
+  }
+
+  .hero p{
+    font-size:1rem;
+    padding:0 20px;
+  }
+
+  .glow{
+    width:500px;
+    height:500px;
+  }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 768px){
+
+  .navbar{
+    padding:20px;
+  }
+
+  .logo{
+    font-size:1.8rem;
+  }
+
+  .nav-links{
+    gap:15px;
+  }
+
+  .nav-links li p{
+    font-size:.9rem;
+  }
+
+  .hero{
+    min-height:100vh;
+    padding:0 20px;
+  }
+
+  .hero h1{
+    font-size:3rem;
+    letter-spacing:1px;
+    line-height:1.1;
+  }
+
+  .hero p{
+    font-size:.9rem;
+    letter-spacing:1px;
+    line-height:1.6;
+  }
+
+  .glow{
+    width:320px;
+    height:320px;
+    filter:blur(100px);
+  }
+
+  .code{
+    font-size:2rem;
+    right:8%;
+  }
+
+  .ai{
+    font-size:1.8rem;
+    left:8%;
+  }
+
+  .db{
+    font-size:1rem;
+  }
+
+  .cursor{
+    display:none;
+  }
+
+  body{
+    cursor:auto;
+  }
+
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px){
+
+  .logo{
+    font-size:1.5rem;
+  }
+
+  .nav-links{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    width:100%;
+  }
+
+  .nav-links li{
+    text-align:center;
+  }
+
+  .hero h1{
+    font-size:2.2rem;
+  }
+
+  .hero p{
+    font-size:.8rem;
+  }
+
+  .scroll-indicator{
+    width:32px;
+    height:55px;
+  }
+
+}
+
+.nav-links li a{
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
