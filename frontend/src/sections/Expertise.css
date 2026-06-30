@@ -98,8 +98,8 @@
   display: grid;
   place-items: center;
   justify-self: end;
-  width: 70%;
-  transform: translateX(500px);
+  width: 75%;
+  transform: translateX(200px);
 }
 
 .expertise-visual__orb {
@@ -117,7 +117,7 @@
 
 .expertise-visual__frame {
   position: relative;
-  width: min(390px, 100%);
+  width: min(500px, 500%);
   aspect-ratio: 1 / 1;
   display: grid;
   place-items: center;

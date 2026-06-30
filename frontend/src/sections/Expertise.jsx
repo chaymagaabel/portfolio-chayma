@@ -1,5 +1,5 @@
 import "./Expertise.css";
-import expertiseLaptop from "../assets/expertise-laptop-cutout.png";
+import expertiseLaptop from "../assets/expertise-laptop.png";
 
 const iconPaths = {
   code: (
